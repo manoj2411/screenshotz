@@ -1,0 +1,11 @@
+<% if screenshot.persisted? %>
+  <div class="large-4 small-6 columns">
+    <%= link_to image_tag( screenshot.image(:medium)), [:edit, screenshot] %>
+
+    <div class="panel">
+      <h5><%= screenshot.name || 'Unnamed' %></h5>
+      <h6 class="subheader"><strong>views: </strong> <%= screenshot.views_count %></h6>
+    </div>
+
+  </div>
+<% end %>

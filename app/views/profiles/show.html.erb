@@ -1,0 +1,37 @@
+<br><br>
+<div class="row">
+  <div class="large-8 columns">
+      <div class="row collapse prefix-radius">
+        <div class="small-2 columns">
+          <span class="prefix">Email</span>
+        </div>
+        <div class="small-8 columns">
+          <%= text_field_tag :email, current_user.email, disabled: :disabled %>
+        </div>
+        <div class="small-2 columns">
+          <span></span>
+        </div>
+      </div>
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="large-8 columns">
+    <%= form_for current_user, as: :profile, url: profile_path do |f| %>
+      <div class="row collapse prefix-radius">
+        <div class="small-2 columns">
+          <span class="prefix">Name</span>
+        </div>
+        <div class="small-8 columns">
+          <%= f.text_field :name %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.submit 'Ok', class: 'button postfix' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+

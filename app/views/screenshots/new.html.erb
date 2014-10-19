@@ -1,0 +1,44 @@
+<div class="row">
+
+  <div class="large-4 small-12 columns">
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="panel">
+          <div class="row">
+            <div class="large-12 small-6 columns">
+              <strong>Take a ScreenShot Now<hr/></strong>
+
+                <%= form_for(@screenshot) do |f| %>
+                  <%= render 'screenshot_errors', screenshot: @screenshot if @screenshot.errors.any? %>
+                  <div class="row">
+                    <div class="large-12 columns">
+                      <div class="row collapse">
+                        <div class="small-10 columns">
+                          <%= f.text_field :url, placeholder: 'http://www.google.com' %>
+                        </div>
+                        <div class="small-2 columns">
+                          <%= f.submit 'Go', class: 'button postfix' %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="large-8 columns">
+    <div class="row">
+      <% if @screenshots.present? %>
+        <%= render partial: 'screenshot', collection: @screenshots %>
+      <% else %>
+        <br>
+        <center><p> No ScreenShot Available :(</p></center>
+      <% end %>
+    </div>
+  </div>
+</div>
